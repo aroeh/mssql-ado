@@ -1,0 +1,5 @@
+FROM mcr.microsoft.com/dotnet/aspnet:9.0
+USER app
+WORKDIR /app
+COPY Mssql.Ado.API/publish .
+ENTRYPOINT ["dotnet", "Mssql.Ado.API.dll"]

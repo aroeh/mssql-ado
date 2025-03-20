@@ -1,0 +1,34 @@
+networks:
+  backend:
+
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server
+    container_name: mssql-data
+    restart: always
+    networks:
+      - backend
+    ports:
+      - 1433:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=YourStrong@Passw0rd
+      - MSSQL_USER=sa
+      - MSSQL_PID=Developer
+
+  mssqlapi:
+    image: ${DOCKER_REGISTRY-}mssqlapidemo
+    container_name: mssql-api
+    networks:
+      - backend
+    build:
+      context: .
+      dockerfile: Mssql.Ado.API/Dockerfile
+    ports:
+      - 5199:80
+    depends_on:
+      - mssql
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - ASPNETCORE_ENVIRONMENT=Development
+      - MsSqlConn=Persist Security Info=False;User ID=sa;Password=YourStrong@Passw0rd;Initial Catalog=Samples;Server=mssql;Encrypt=True;TrustServerCertificate=True;

@@ -1,0 +1,25 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5198",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "MsSqlConn": "Persist Security Info=False;User ID=sa;Password=YourStrong@Passw0rd;Initial Catalog=Samples;Server=localhost,1433;Encrypt=True;TrustServerCertificate=True;"
+      }
+    },
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:7198;http://localhost:5198",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "MsSqlConn": "Persist Security Info=False;User ID=sa;Password=YourStrong@Passw0rd;Initial Catalog=Samples;Server=localhost,1433;Encrypt=True;TrustServerCertificate=True;"
+      }
+    }
+  }
+}

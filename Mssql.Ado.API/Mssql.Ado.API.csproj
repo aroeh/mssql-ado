@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mssql.Ado.Core\Mssql.Ado.Core.csproj" />
+    <ProjectReference Include="..\Mssql.Ado.Infrastructure\Mssql.Ado.Infrastructure.csproj" />
+    <ProjectReference Include="..\Mssql.Ado.Shared\Mssql.Ado.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="HttpRequests\" />
+  </ItemGroup>
+
+</Project>
